@@ -60,7 +60,7 @@ def run_my_program():
         ThingTwo().go(session)
 ```
 
-##Thread-Local模式 —— 生命周期与 request 同步
+## Thread-Local模式 —— 生命周期与 request 同步
 ``` python
 Web Server          Web Framework        SQLAlchemy ORM Code
 --------------      --------------       ------------------------------
@@ -121,15 +121,73 @@ Flask-SqlAlchemy就是用上面的方法实现的
 
 
 
+## sqlalchemy session 总结
++ **sqlalchemy会把一个表对象 附加给一个session ,如果这个session不close，别的session无法使用这个对象**
+
+会报错：
+User 对象已经附加给session 6 ,当前是 session 7 ,无法操作User
+``` python
+InvalidRequestError: Object '<User at 0x7f1e8fede090>' is already attached to session '6' (this is '7')
+```
++ session的close() 只是释放对表的控制权,并不是断开连接(connect)，所以close() 之后依然可以执行查询
+
++ 使用scoped_session() 之后获得的session，如果不执行session.remove(),所获得的session都是同一个session
+
++ session.remove() 并不会，执行close()，所以正常的顺序应该是
+    1. session = scoped_session(session_factory)
+    2. s1 = session()
+    3. s1.add(jessica)
+    4. s1.commit()
+    5. session.remove()
 
 
+如下 示例验证了上面的说法
+``` python
+from sqlalchemy import Column, String, Integer, ForeignKey
+from sqlalchemy.ext.declarative import declarative_base
+
+Base = declarative_base()
+
+class User(Base):
+    __tablename__ = 'user'
+    id = Column(Integer, primary_key=True)
+    name = Column(String)
 
 
+from sqlalchemy import create_engine
+engine = create_engine('sqlite:///test.db')
 
+from sqlalchemy.orm import sessionmaker
+session = sessionmaker()
+session.configure(bind=engine)
+Base.metadata.create_all(engine)
 
+# Construct the first session object
+s1 = session()
+# Construct the second session object
+s2 = session()
+>>> s1 is s2
+False
+>>> jessica = User(name='Jessica')
+>>> s1.add(jessica)
+>>> s2.add(jessica)
+Traceback (most recent call last):
+......
+sqlalchemy.exc.InvalidRequestError: Object 'User at' is already attached to session '1' (this is '2')
 
-
-
+##################
+>>> session_factory = sessionmaker(bind=engine)
+>>> session = scoped_session(session_factory)
+>>> s1 = session()
+>>> s2 = session()
+>>> jessica = User(name='Jessica')
+>>> s1.add(jessica)
+>>> s2.add(jessica)
+>>> s1 is s2
+True
+>>> s1.commit()
+>>> s2.query(User).filter(User.name == 'Jessica').one()
+```
 参考：
 http://my.oschina.net/lionets/blog/407263
 
