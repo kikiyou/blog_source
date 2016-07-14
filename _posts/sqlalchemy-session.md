@@ -134,3 +134,6 @@ Flask-SqlAlchemy就是用上面的方法实现的
 http://my.oschina.net/lionets/blog/407263
 
 http://docs.sqlalchemy.org/en/latest/orm/session_basics.html
+
+
++ 普通session 和 使用 scoped_session的区别 [传送门](http://pythoncentral.io/understanding-python-sqlalchemy-session/)
