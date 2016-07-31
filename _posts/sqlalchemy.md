@@ -66,9 +66,9 @@ sqlite:///DB_PATH
 + 添加多条
 
 session.add_all([
-...     User(name='wendy', fullname='Wendy Williams', password='foobar'),
-...     User(name='mary', fullname='Mary Contrary', password='xxg527'),
-...     User(name='fred', fullname='Fred Flinstone', password='blah')])
+     User(name='wendy', fullname='Wendy Williams', password='foobar'),
+     User(name='mary', fullname='Mary Contrary', password='xxg527'),
+     User(name='fred', fullname='Fred Flinstone', password='blah')])
 
 + 修改ed_user的密码
 ed_user.password = 'f8s7ccs'
@@ -111,3 +111,28 @@ False
 
 session.query(User).filter(User.name.in_(['ed', 'fakeuser'])).all()
 通过上面查询，无法查到fakeuser用户
++ 查询
+
+
+    for instance in session.query(User).order_by(User.id):
+        print(instance.name, instance.fullname)
+
+    for name, fullname in session.query(User.name, User.fullname):
+        print(name, fullname)
+注：查询结果是返回一个列表
+
++ 查询 给一个列加label
+
+
+    for row in session.query(User.name.label('name_label')).all():
+    print(row.name_label)
+注：加标签后，查询时输入标签即可
+
++ 查询 给一个表 alise
+
+    from sqlalchemy.orm import aliased
+    user_alias = aliased(User, name='user_alias')
+    for row in session.query(user_alias, user_alias.name).all():
+        print(row.user_alias)
+
+ + 查询 limit 实现使用 python的slices
