@@ -150,6 +150,7 @@
      ```
 + 数组
     php中的数组实际上包含了python的字典
+    ``` php
     - 创建数组
     1. $state[0] = "Delaware";
 
@@ -171,7 +172,6 @@
         $array = ["foo" => "bar","bar" => "foo",];
 
     5. 使用list() 提取数组
-    ```
     $users = fopen("users.txt","r");
     while ($line = fgets($users,4096)) {
         list($name, $occupation, $color) = explode("|", $line);
@@ -180,9 +180,105 @@
         printf("Favorite color: %s <br />", $color);
     }
     fclose($users);
-    ```
+
     6. print_r() 数组的友好输出
 
     7. 添加或删除数组
         $states = ["key" => "value","key1" => "value1"]
-        （1）array_unshift($states,"key","value")
+
+        (1) 在数组头添加元素
+        array_unshift($states,"key","value");
+
+        (2) 在数组尾添加元素
+        array_push($states,"key","value");
+
+        (3) 在数组头删除元素
+        arrary_shift($states);
+
+        (4) 从数组尾删除元素
+        array_pop($states);
+
+    8. 定位数组元素
+    $states = ["key" => "value","key1" => "value1"]
+        (1) 判断元素是否存在  true|false
+            in_array("key",$states)
+
+        (2) 搜索关联数组
+            array_key_exists("key",$states)
+
+        (3) 搜索关联数组的值
+            array_search("vale",$states)
+
+        (4) 获取数组中所有key
+        $keys = array_keys($states);
+        print_r($keys)
+        OutPut----
+        Array([0] => key1 [1] ==> key2)
+
+        (5) 获取数组中的所有value
+            values = array_values($states);
+            print_r($values)
+        OutPut----
+        Array([0] => value, [1] => value1)
+
+        (6) 获取当前数组key
+        //key()
+        while($key = key($states)){
+            printf("$s </br",$key);
+            next($states)
+        }
+        OutPut----
+        key
+        key1
+
+        (7) 获取当前数组的值
+        //current()
+        while($value = current($states)){
+            printf("$s </br",$value);
+            next($states)
+        }
+        OutPut----
+        value
+        value1
+
+        (8) 获取当前数组的键和值
+        //each
+        返回当前的键值对，并使指针推进一个位置。
+        $current_states =  each($states);
+        print_r($current_states)
+        OutPut----
+         Array([0] => key, [1] => value)
+
+        (9) 移动数组指针到下一个位置
+        //next($states)
+        $names = ["tom", "yip", "ljq"];
+        $name = next($names); //returns "yip"
+
+        (10) 移动指针到前一个位置
+        //prev($states)
+
+        (11) 将指针移到第一个位置
+        //rest($states)
+
+        (12) 将指针移动到最后一个数组位置
+        //end($states)
+
+        (13) 向函数传递数组值
+        //arry_walk()
+
+        (14) 确定数组的大小和唯一性
+           1. count() /sizeof() 统计大小
+           2. array_count_values() 统计出现频率
+
+        (15) 确定唯一的数组元素
+        array_unique()
+
+        (16) 数组排序
+        1. array_reverse($states)  逆序
+        2. sort() 由底到高
+        3. natsort 自然排序
+        
+        （17）置换数组key和value的值
+        array_flip($states)
+
+        （18）
