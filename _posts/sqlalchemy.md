@@ -1,4 +1,8 @@
-
+---
+title: sqlalchemy
+date: 2016-07-11 10:32:21
+tags:
+---
 ### sqlalchemy的使用
 
 + 连接数据库
@@ -11,6 +15,7 @@ echo=True  调试的时候使用，显示sql代码
 
 sqlite:///DB_PATH
 
+<!-- more -->
 + 简介及
 
 
@@ -111,6 +116,7 @@ False
 
 session.query(User).filter(User.name.in_(['ed', 'fakeuser'])).all()
 通过上面查询，无法查到fakeuser用户
+<<<<<<< HEAD
 + 查询
 
 
@@ -136,3 +142,11 @@ session.query(User).filter(User.name.in_(['ed', 'fakeuser'])).all()
         print(row.user_alias)
 
  + 查询 limit 实现使用 python的slices
+=======
+```
+ed_user.name = 'Edwardo'
+fake_user = User(name='fakeuser', fullname='Invalid', password='12345')
+session.add(fake_user)
+session.query(User).filter(User.name.in_(['Edwardo', 'fakeuser'])).all()
+```
+>>>>>>> 56222fd9bc66c3be128adb5374afd7c7a0bd0f67
