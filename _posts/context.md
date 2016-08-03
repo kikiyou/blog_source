@@ -17,7 +17,7 @@ tags:
     上下文管理协议（Context Management Protocol）：
 
     包含方法 `__enter__()` 和 `__exit__()`，支持该协议的对象要实现这两个方法。
-
+<!-- more -->
     上下文管理器（Context Manager）：
 
     支持上下文管理协议的对象，这种对象实现了
@@ -247,6 +247,9 @@ tags:
         # Do stuff
     ```
     参考：
-    [传送门](https://pymotw.com/2/contextlib/)
-    [传送门](https://www.python.org/dev/peps/pep-0343/)
-    [传送门](https://docs.python.org/3/library/contextlib.html)
+
+    https://pymotw.com/2/contextlib/
+
+    https://www.python.org/dev/peps/pep-0343/
+
+    https://docs.python.org/3/library/contextlib.html

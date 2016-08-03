@@ -138,8 +138,10 @@ InvalidRequestError: Object '<User at 0x7f1e8fede090>' is already attached to se
     2. s1 = session()
     3. s1.add(jessica)
     4. s1.commit()
+    5. s1.close()
     5. session.remove()
-
++ 因为如果没有执行 session.remove() 不需要执行 s1.close()，
+  应为同一个 session不需要释放，就可以提交。
 
 如下 示例验证了上面的说法
 ``` python

@@ -277,8 +277,132 @@
         1. array_reverse($states)  逆序
         2. sort() 由底到高
         3. natsort 自然排序
-        
+
         （17）置换数组key和value的值
         array_flip($states)
 
-        （18）
+        （18）合并数组
+            new_states = array_merge_recursive($states1, $states2);
+
++ 面向对象
+    1. 构造函数
+    function __construct([arg,agr1,agr2.....])
+
+    调用父类的构造函数 
+    //parent
+    parent::__construct();
+
+    2. 析构函数
+    function __destruct()
+
+    3. 静态类型
+    self::$visitors++; //赋值
+
+    Visitor::getVisitors(); //引用
+    静态字段和方法需要使用self关键字和类名应用
+
+    4. instanceof关键字
+    $manager = new Employee();
+    .....
+    if ($manager instanceof Emplyee) echo "Yes";
+    //判断manager的对象是否为类Employee的实例
+
+    5. 辅助函数
+    （1） boolean class_exists(string class_name)
+        确定类是否存在
+
+    （2） string get_class(object object)
+        确定对象上下文
+
+    （3） array get_class_methods( class_name)
+        了解类方法：函数返回一个数组，其中包含class_name类中低昂以的所有方法名
+
+    （4）array get_declared_classes(void) 
+        了解类字段:返回关联数组，包含object可用的字段和其值
+
+    （5）string get_parent_class(object)
+        确定对象的父类
+
+    （6）boolean interface_exists(string interface_name)
+        确定一个接口是否存在
+    
+    （7）boolean is_a(object object,string class_name)
+        确定对象类型
+    （8）boolean is_subclass_of(object object, string class_name)
+        确定对象的子类类型
+    （9）boolean method_exists(object object,string method_name)
+        确定方法是否存在
+
+    6.自动加载对象
+    old-->
+    require_once("class/Books.class.php")
+    require_once("class/Employees.class.php")
+
+    new-->
+    function __autoload($class){
+        require_once("class/$class.class.php")
+    }
+
+    自动加载通过定义特殊的__autoload函数，当引用未在脚本中定义的类时，自动调用这个函数。
+
++ 高级oop特性
+    1. 对象克隆
+    destinationObject = clone targetObject;
+    
+    1.1 __clone() 方法
+        function __clone(){
+            $this->tiecolor = "blue";
+        }
+        //在执行clone时会自动调用__clone()方法
+
+    2. 继承
+    class child_class extends parent_class{
+        function new_metchod(){
+            print "new_metchod"
+        }
+    }
+
+    2.1 继承时构造函数的处理
+        （1）子类没有构造函数，父类有  会执行父类的
+        （2）子类有构造函数  不论父类有没有 都会执行子类的
+        （3）如果想执行父类的构造函数 子类的构造函数如下写
+            function __construct($name){
+                parent::__construct($name);
+                echo "<p> child class construct function</p>"
+            }
+        （4）如果向多个父类的构造函数都要执行，可以使用显式的 引用
+
+    3. 接口 （接口是为了不支持多重继承而设置的，python支持多重继承，所以没有接口）
+        接口：声明了所需的函数和常量，但不指定如何实现。
+        interface interface_name{
+            function method_name1();
+        }
+        class Class_Name implements interface_name{
+            function method_name1()
+            {
+                //接口方法的实现
+            }
+        }
+
+    3.1 实现多个接口
+        interface IEmployee {...}
+        interface IDeveloper {...}
+        interface IPillage {...}
+
+        class Employee implements IEmployee， IDeveloper， iPillage{
+            ...
+        }
+
+        class Contractor implements IEmployee， IDeveloper{
+            ...
+        }
+    
+    4. 抽象类
+        抽象类：不能实例化的类，只能作为i由其他类继承的基类。
+
+        abstract class Class_Name
+        {
+            // insert attribute definition here
+            // insert method definition here
+        }
+    5. 命名空间介绍 （python 不支持 namespace这种写法）
