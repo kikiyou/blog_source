@@ -1,4 +1,16 @@
 #### php学习
++ php中显示错误信息 修改php.ini 如下
+
+    1. display_errors = On
+
+    2. error_reporting = E_ALL &~E_NOTICE
+
+    在apache中
+
+    1.php_flag display_errors On
+
+    2.php_alue error_reporting 2039
+    
 + 字符串输出
     1. echo | print
         >echo "string"
@@ -27,17 +39,6 @@
    void var_dump ( mixed $expression [, mixed $... ] )
 
    显示变量信息，方便debug使用
-+ php中显示错误信息 修改php.ini 如下
-
-    1. display_errors = On
-
-    2. error_reporting = E_ALL &~E_NOTICE
-
-    在apache中
-
-    1.php_flag display_errors On
-
-    2.php_alue error_reporting 2039
 
 + 控制语句
     1. if语句
