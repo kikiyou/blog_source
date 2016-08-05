@@ -1145,3 +1145,5 @@
         //这只会删除 username这个key的值 
     
     9. 自定义session储存方法 比如：redis 
+
++ 模版化 Smary |symfony 采用的 twig | Laravel 采用的 Blade 
