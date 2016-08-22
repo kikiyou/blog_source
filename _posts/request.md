@@ -205,3 +205,39 @@ if not 'eventlet' in locals():
     self.response.status_code = resp.code
     -----
     self.response.status_code = getattr(resp, 'code', None)
+
++ request.async.get() 的实现
+    创建 async.py
+    先引入async 再import  从core 引入get
+    这时就可以 实现异步sync的get
+    -->request -->async.py -->import urllib -->monkey_patch urllib -->core.py -->get()
+
++ 认证的支持
+
+```
+Add in a proper AuthManager instead of the list version that was being used.
+Added support for all Auth types that python supports
+
+原有的
+    >>> conv_auth = ('requeststest', 'requeststest') ##username password
+    >>> r = requests.get('https://convore.com/api/account/verify.json', auth=conv_auth)
+
+-------------------
+auth = ('username','password')
+auth[0]
+auth[1]
+def _get_opener(self):
+    if self.auth or self.cookiejar:
+        if self.auth:
+            authr = urllib2.HTTPPasswordMgrWithDefaultRealm()
+
+            authr.add_password(None, self.url, self.auth[0], self.auth[1])
+            auth_handler = urllib2.HTTPBasicAuthHandler(authr)
+
+            _handlers.append(auth_handler)
+----------------------------------------
+新的
+
+
+
+```
