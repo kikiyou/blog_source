@@ -212,32 +212,22 @@ if not 'eventlet' in locals():
     这时就可以 实现异步sync的get
     -->request -->async.py -->import urllib -->monkey_patch urllib -->core.py -->get()
 
-+ 认证的支持
++ 小技巧  方便传值
+``` python
+def get(url, params={}, headers={}, cookies=None, auth=None):
+    return request('GET', url, params=params, headers=headers, cookiejar=cookies,
+                    auth=_detect_auth(url, auth))
 
-```
-Add in a proper AuthManager instead of the list version that was being used.
-Added support for all Auth types that python supports
+def request(method, url, **kwargs):
+    r = Request(method=method, url=url, data=data, headers=kwargs.pop('headers', {}),
+                cookiejar=kwargs.pop('cookies', None), files=kwargs.pop('files', None),
+                auth=_detect_auth(url, kwargs.pop('auth', None)))
 
-原有的
-    >>> conv_auth = ('requeststest', 'requeststest') ##username password
-    >>> r = requests.get('https://convore.com/api/account/verify.json', auth=conv_auth)
-
--------------------
-auth = ('username','password')
-auth[0]
-auth[1]
-def _get_opener(self):
-    if self.auth or self.cookiejar:
-        if self.auth:
-            authr = urllib2.HTTPPasswordMgrWithDefaultRealm()
-
-            authr.add_password(None, self.url, self.auth[0], self.auth[1])
-            auth_handler = urllib2.HTTPBasicAuthHandler(authr)
-
-            _handlers.append(auth_handler)
-----------------------------------------
-新的
-
-
-
+class Request(object):
+    def __init__(self, url=None, headers=dict(), files=None, method=None,
+                 data=dict(), auth=None, cookiejar=None):
+        self.url = url
+        self.headers = headers
+        self.files = files
+        self.method = method              
 ```
