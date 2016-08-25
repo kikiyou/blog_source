@@ -231,3 +231,81 @@ class Request(object):
         self.files = files
         self.method = method              
 ```
++ urllib2.urlparse 模块
+    （1） urlparse.urlsplit 把url 分成5部分，并返回元组
+        
+        >scheme
+        >netloc
+        >path
+        >query
+        >fragment
+
+        url=urlparse.urlsplit('http://www.baidu.com/index.php?username=guol')
+        SplitResult(scheme='http', netloc='www.baidu.com', path='/index.php', query='username=guol', fragment='')
+
+    （2） urlparse.urlunsplit 和urlsplit相反 生成 url 
+
+    （3） urlparse.urljoin 组合生成url   确保基地址是依/ 结尾
+        >>> import urlparse
+        >>> urlparse.urljoin('http://www.oschina.com/tieba','index.php')
+        'http://www.oschina.com/index.php'
+        >>> urlparse.urljoin('http://www.oschina.com/tieba/','index.php')
+        'http://www.oschina.com/tieba/index.php'
+
++ or 操作符
+
+    In [25]: path = '' or '/'
+    In [26]: path
+    Out[26]: '/'
+
+    In [27]: path = 'xx' or '/'
+    In [28]: path
+    Out[28]: 'xx'
+
++ @staticmethod和@classmethod的作用与区别
+
+一般来说，要使用某个类的方法，需要先实例化一个对象再调用方法。
+而使用@staticmethod或@classmethod，就可以不需要实例化，直接类名.方法名()来调用。
+
+    - @staticmethod不需要表示自身对象的self和自身类的cls参数，就跟使用函数一样。
+    - @classmethod也不需要self参数，但第一个参数需要是表示自身类的cls参数。
+
+class A(object):
+    bar = 1
+    def foo(self):
+        print 'foo'
+
+    @staticmethod
+    def static_foo():
+        print 'static_foo'
+        print A.bar
+
+    @classmethod
+    def class_foo(cls):
+        print 'class_foo'
+        print cls.bar
+        cls().foo()
+
+A.static_foo()
+A.class_foo()
+
+
++ class 只被初始化一次
+```
+class AuthManager(object):
+    """Authentication Manager."""
+    
+    def __new__(cls):
+        singleton = cls.__dict__.get('__singleton__')
+        if singleton is not None:
+            return singleton
+
+        cls.__singleton__ = singleton = object.__new__(cls)
+
+        return singleton
+
+
+    def __init__(self):
+        self.passwd = {}
+        self._auth = {}
+```
