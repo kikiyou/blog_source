@@ -309,3 +309,17 @@ class AuthManager(object):
         self.passwd = {}
         self._auth = {}
 ```
+
++ 替换 isinstance 为 hasattr
+把 
+        if isinstance(data, dict):
+            self.data = urllib.urlencode(data)
+        else:
+            self.data = data
+
+换成
+
+        if hasattr(data, 'items'):
+            self.data = urllib.urlencode(data)
+        else:
+            self.data = data

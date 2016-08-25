@@ -94,8 +94,8 @@ def _get_opener(self):
 ------------
 ```
 
-+ 第三个方案 
-```
++ 第三个方案 tags -> v0.3.0
+``` python
     def test_AUTH_HTTPS_200_OK_GET(self):
         auth = ('requeststest', 'requeststest')
         url = 'https://convore.com/api/account/verify.json'
@@ -109,6 +109,9 @@ def _get_opener(self):
         r = Request(method=method, url=url, data=data, headers=kwargs.pop('headers', {}),
                 cookiejar=kwargs.pop('cookies', None), files=kwargs.pop('files', None),
                 auth=kwargs.pop('auth', auth_manager.get_auth(url)))
+<!-- 没有直接传入auth时 有两中情况 -->
+1. auth_manager.get_auth 查询是否定义了全局 密码，有的话返回全局密码
+2. 没有的话返回 None 
 
 auth_manager = AuthManager()
 
@@ -251,7 +254,7 @@ class AuthManager(object):
             return opener.open
         else:
             return urllib2.urlopen
-            
+
 class Request(object):
     def __init__(self, url=None, headers=dict(), files=None, method=None,
                 data=dict(), auth=None, cookiejar=None):
@@ -260,3 +263,4 @@ class Request(object):
         if not auth:
             auth = auth_manager.get_auth(self.url)
         self.auth = auth
+```
