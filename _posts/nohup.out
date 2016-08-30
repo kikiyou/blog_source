@@ -7,3 +7,6 @@ opendir: Not a directory
 opendir: Not a directory
 Autoselected keyboard map en-us
 disconnect: Server initiated disconnect.
+Autoselected keyboard map en-us
+WARNING: No translation for (keysym 0x1008fe23, XF86Prev_VMode)
+WARNING: No translation for (keysym 0x1008fe23, XF86Prev_VMode)

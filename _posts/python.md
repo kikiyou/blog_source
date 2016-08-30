@@ -31,3 +31,20 @@ http://stackoverflow.com/questions/29987840/how-to-execute-python-code-from-with
           s.hello()
           ```
 3. @property  把方法变成属性
+
++ python 中闭包的实现
+  ```
+  def addx(x):
+    return lambda y: x + y
+
+  add8 = addx(8)
+  add9 = addx(9)
+
+  print add8(100)
+  print add9(100)
+
+  闭包的作用
+  
+  加强模块化
+
+```
