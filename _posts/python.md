@@ -48,4 +48,36 @@ http://stackoverflow.com/questions/29987840/how-to-execute-python-code-from-with
   加强模块化
 
 ```
-+ 
++ locals() 和 globals()
+  局部命名空间 和 全局命名空间
+
+  python中namespace只是一个字典，它的键字就是变量名，字典的值就是那些变量的值。
+ 
+ locals 是只读的，globals 不是
+
+例 4.10. locals 介绍
+
+>>> def foo(arg):  
+...     x = 1
+...     print locals()
+...     
+>>> foo(7)        
+{'arg': 7, 'x': 1}
+>>> foo('bar')    
+{'arg': 'bar', 'x': 1}
+------
+globals 介绍
+#!/bin/bash
+
+if __name__ == "__main__":
+    for k, v in globals().items(): 
+        print k, "=", v
+-----        
+✗ python 1.py
+__builtins__ = <module '__builtin__' (built-in)>
+__name__ = __main__
+__file__ = 1.py
+__doc__ = None
+__package__ = None
+
+参考 [locals 和 globals](http://www.chinesepython.org/pythonfoundry/limodoupydoc/dive/html/dialect_locals.html)
