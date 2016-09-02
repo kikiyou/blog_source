@@ -44,7 +44,8 @@ http://stackoverflow.com/questions/29987840/how-to-execute-python-code-from-with
   print add9(100)
 
   闭包的作用
-  
+
   加强模块化
 
 ```
++ 
