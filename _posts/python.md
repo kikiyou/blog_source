@@ -81,3 +81,17 @@ __doc__ = None
 __package__ = None
 
 参考 [locals 和 globals](http://www.chinesepython.org/pythonfoundry/limodoupydoc/dive/html/dialect_locals.html)
+
+
++ python  dict() 函数
+可以很方便的 把list 转换为字典
+比如：
+```
+list = [(key,value),(key1,value1)]
+dict = dict(list)
+> dict
+{key:value,key1:value1}
+
++ 交互的输入密码
+import getpass
+getpass.getpass()
