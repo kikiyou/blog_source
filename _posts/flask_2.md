@@ -173,3 +173,10 @@ int(base=2,'10010')
 >>> basetwo.__doc__ = 'Convert base 2 string to an int.'
 >>> basetwo('10010')
 18
+
++ Flask返回json两种方式
+
+[参考](http://blog.trytofix.com/article/detail/54/)
+
+（1） from flask import jsonify
+（2） json.dumps() + Response 

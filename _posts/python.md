@@ -81,3 +81,45 @@ __doc__ = None
 __package__ = None
 
 参考 [locals 和 globals](http://www.chinesepython.org/pythonfoundry/limodoupydoc/dive/html/dialect_locals.html)
+
++ functools 模块
+functools 模块中有三个主要的函数 partial(), update_wrapper() 和 wraps()。
+[参考](http://blog.jkey.lu/2013/03/15/python-decorator-and-functools-module/)
+
+``` python
+wraps(wrapped[, assigned][, updated])
+wraps() 函数把用 partial() 把 update_wrapper() 给封装了一下。
+貌似是方便加注释的
+
+def wraps(wrapped,
+          assigned = WRAPPER_ASSIGNMENTS,
+          updated = WRAPPER_UPDATES):
+
+    return partial(update_wrapper, wrapped=wrapped,
+                   assigned=assigned, updated=updated)
+
+好，接下来看一下是如何使用的，这才恍然大悟，一直在很多开源项目的代码中看到如下使用。
+
+from functools import wraps
+def my_decorator(f):
+     @wraps(f)
+     def wrapper(*args, **kwds):
+         print 'Calling decorated function'
+         return f(*args, **kwds)
+     return wrapper
+
+@my_decorator
+def example():
+    """这里是文档注释"""
+    print 'Called example function'
+
+example()
+
+# 下面是输出
+"""
+Calling decorated function
+Called example function
+"""
+print example.__name__ # 'example'
+print example.__doc__ # '这里是文档注释'
+````
