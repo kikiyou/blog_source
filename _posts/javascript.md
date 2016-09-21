@@ -146,3 +146,6 @@ monitorEvents(firstInput)
  [jquery事件处理](http://api.jquery.com/category/events/)
 
 + ajax .getJson 从指定url获取 json数据
+
++ jquery 中根据表单name获取值
+var payment = $("input[name='payment']:checked").val();
