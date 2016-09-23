@@ -1,3 +1,8 @@
+---
+title: JavaScript
+tags: JavaScript
+---
+
 # JavaScript 基础学习
 
 # jQuery架构设计与实现 (买来看一下)

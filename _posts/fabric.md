@@ -1,3 +1,9 @@
+---
+title: fabric
+date: 2016-08-14 10:19:44
+tags: python
+---
+
 # fabric学习
 
 + 基于字典的字符串格式化

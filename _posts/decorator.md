@@ -1,3 +1,9 @@
+---
+title: decorator-装饰器
+date: 2016-08-14 10:19:44
+tags: python
+---
+
 # 装饰器
 python 中大量用到装饰器 一直很模糊，单独提取出来总结
 

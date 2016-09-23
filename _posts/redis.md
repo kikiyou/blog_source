@@ -1,7 +1,7 @@
 ---
 title: redis
 date: 2016-07-18 16:10:02
-tags:
+tags: redis
 ---
 ## redis 初学
 

@@ -1,3 +1,8 @@
+---
+title: VS code的使用
+date: 2016-08-18 16:10:02
+tags: editor
+---
 #### vs code的使用
 
 + python 的使用安装

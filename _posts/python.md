@@ -1,3 +1,9 @@
+---
+title: python学习
+date: 2016-07-14 10:19:44
+tags: python
+---
+
 ### python学习
 python debug 工具
     pdb
