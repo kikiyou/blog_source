@@ -1,3 +1,9 @@
+---
+title: php学习
+date: 2016-07-14 10:19:44
+tags: php
+---
+
 #### php学习
 + php中显示错误信息 修改php.ini 如下
 

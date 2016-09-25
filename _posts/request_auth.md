@@ -1,4 +1,9 @@
- # request认证的支持
+---
+title: requests
+date: 2016-07-18 16:10:02
+tags: python
+---
+# request认证的支持
 
 
 Add in a proper AuthManager instead of the list version that was being used.

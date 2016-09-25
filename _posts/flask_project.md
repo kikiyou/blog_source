@@ -1,3 +1,9 @@
+---
+title: flask项目组织方法
+
+tags: python
+---
+
 # flask项目组织方法
 
 参考：https://exploreflask.com/blueprints.html

@@ -1,3 +1,8 @@
+---
+title: post_vs_get
+date: 2016-07-14 10:19:44
+tags: http
+---
 ## POST  和 GET 的区别
 
 1. get 的形式如下：

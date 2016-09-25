@@ -1,7 +1,7 @@
 ---
 title: redis
 date: 2016-07-18 16:10:02
-tags:
+tags: redis
 ---
 ## redis 初学
 
@@ -17,6 +17,20 @@ tags:
     + 增
         1. HSET key field value
         2. HMSET key field value [field value …]
+           HMSET 可以很方便的储存字典
+           
+``` python
+import redis
+conn = redis.Redis('localhost')
+
+user = {"Name":"Pradeep", "Company":"SCTL", "Address":"Mumbai", "Location":"RCP"}
+
+conn.hmset("pythonDict", user)
+
+conn.hgetall("pythonDict")
+
+{'Company': 'SCTL', 'Address': 'Mumbai', 'Location': 'RCP', 'Name': 'Pradeep'}
+```
     + 删
     + 查
         1. HGETALL key

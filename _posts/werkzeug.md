@@ -1,3 +1,8 @@
+---
+title: werkzeug学习
+date: 2016-08-18 16:10:02
+tags: python
+---
 # werkzeug学习
 
 + 学习shortly.py
@@ -45,3 +50,42 @@ jinja2 就根据定义好的模版文件  渲染个正确的html文档
 然后 调用 Response类 把内容返回给客户端
 
 客户端收到服务器的数据,浏览器 呈现出来
+
++ werkzeug中的Map()
+
+from werkzeug.routing import Map
+self.url_map = Map()
+
+werkzeug.routing中Map()的示例
+    >>> m = Map([
+    ...     # Static URLs
+    ...     Rule('/', endpoint='static/index'),
+    ...     Rule('/about', endpoint='static/about'),
+    ...     Rule('/help', endpoint='static/help'),
+    ...     # Knowledge Base
+    ...     Subdomain('kb', [
+    ...         Rule('/', endpoint='kb/index'),
+    ...         Rule('/browse/', endpoint='kb/browse'),
+    ...         Rule('/browse/<int:id>/', endpoint='kb/browse'),
+    ...         Rule('/browse/<int:id>/<int:page>', endpoint='kb/browse')
+    ...     ])
+    ... ], default_subdomain='www')
+    
+    >>> c = m.bind('example.com')
+    >>> c.build("kb/browse", dict(id=42))
+    'http://kb.example.com/browse/42/'
+    >>> c.build("kb/browse", dict())
+    'http://kb.example.com/browse/'
+    >>> c.build("kb/browse", dict(id=42, page=3))
+    'http://kb.example.com/browse/42/3'
+    >>> c.build("static/about")
+    '/about'
+    >>> c.build("static/index", force_external=True)
+    'http://www.example.com/'
+
+    >>> c = m.bind('example.com', subdomain='kb')
+    >>> c.build("static/about")
+    'http://www.example.com/about'
+
+    [Flask 路由做范围限制](http://liyangliang.me/posts/2014/02/range-validation-in-flask-routing/)
+    
