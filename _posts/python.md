@@ -144,3 +144,6 @@ dict = dict(list)
 + 交互的输入密码
 import getpass
 getpass.getpass()
+
++ python 没有switch的解决办法
+http://www.pydanny.com/why-doesnt-python-have-switch-case.html
