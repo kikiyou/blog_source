@@ -24,5 +24,7 @@ contributors.txt
 
 
 + itertools 高效循环的迭代函数集合
+[参考](http://wklken.me/posts/2013/08/20/python-extra-itertools.html)
 
 + multiprocessing
+[multiprocessing](http://www.cnblogs.com/vamei/archive/2012/10/12/2721484.html)
