@@ -144,3 +144,8 @@ dict = dict(list)
 + 交互的输入密码
 import getpass
 getpass.getpass()
+
+
++ dir()  
+ 获取模块中的  获得模块的属性列表
+  flask 中用它，获取配置信息
