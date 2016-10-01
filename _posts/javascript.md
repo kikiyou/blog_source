@@ -154,3 +154,18 @@ monitorEvents(firstInput)
 
 + jquery 中根据表单name获取值
 var payment = $("input[name='payment']:checked").val();
+
++ 原生Ajax 
+
+xmlhttp=new XMLHttpRequest();   // 1. 创建对象
+
+xmlhttp.onreadystatechange=function() //3. 如果状态改变，就获取返回结果
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+    document.getElementById("txtHint").innerHTML=xmlhttp.responseText;
+    }
+  }
+  
+xmlhttp.open("GET", "ajaxtest.php?username=" + str, true); //2. 编制请求
+xmlhttp.send(); //3. 发送
