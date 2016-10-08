@@ -145,5 +145,12 @@ dict = dict(list)
 import getpass
 getpass.getpass()
 
+<<<<<<< HEAD
+
++ dir()  
+ 获取模块中的  获得模块的属性列表
+  flask 中用它，获取配置信息
+=======
 + python 没有switch的解决办法
 http://www.pydanny.com/why-doesnt-python-have-switch-case.html
+

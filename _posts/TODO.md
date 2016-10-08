@@ -15,6 +15,28 @@ tags: learn
 8. jquery 源码
 
 9. wtforms 源码 表单的提交与验证
+
+10. 学习eventlet 或 gevent 优先看eventlet
+
+11. 查看pypy的底层实现，学习python技巧
+
+
+13. leancloud.cn 学习 写个demo
+多线程序  迭代 装饰器 yield
+
+14.  [学习flask项目](https://github.com/mattupstate/overholt.git)
+
+15. [基于vue.js重写Cnodejs.org社区](https://github.com/shinygang/Vue-cnodejs.git)
+Vue + Vue-Router + Vuex + I18n + Validator + Webpack + PostCSS + Karma + Koa
+
+http://www.timqian.com/star-history/#torvalds/linux
+github趋势
+前端的进化 从DOM 到mvvm
+
+这篇文章看一下（动态修改数据库）
+http://www.cnblogs.com/keepfool/p/5648674.html
+
+ 牛B技术  有时间 了解下 http://www.zuoyouxi.com/
 ---
 
 我已经完成
@@ -22,3 +44,5 @@ tags: learn
 1. requests 看完 v0.3.1
 
 2. fabric 看完 v0.0.1了
+
+3. 使用pyjade写个demo （简单玩了一下pyjade之后，发现并不喜欢）

@@ -169,3 +169,9 @@ xmlhttp.onreadystatechange=function() //3. 如果状态改变，就获取返回�
   
 xmlhttp.open("GET", "ajaxtest.php?username=" + str, true); //2. 编制请求
 xmlhttp.send(); //3. 发送
+
++ 闭包
+
+闭包的概念在javascript中用的比较多 
+闭包： 闭包说白了就是函数的嵌套，内层的函数可以使用外层函数的所有变量，即使外层函数已经执行完毕。
+      外层函数的变量 回保存起来 和 内层函数同时存在
