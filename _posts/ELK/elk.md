@@ -1,3 +1,9 @@
+---
+title: ELK 资料收集
+date: 2016-09-09 11:31:44
+tags: 
+- elk
+---
 # ELK 资料收集
 
 ELK Stack 是 Elasticsearch、Logstash、Kibana 三个开源软件的组合。
