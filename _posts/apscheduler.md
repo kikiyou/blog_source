@@ -1,7 +1,8 @@
 ---
 title: apscheduler-python后台定时任务
 date: 2016-08-14 10:19:44
-tags: python
+tags: 
+- python
 ---
 
 # python后台定时任务 

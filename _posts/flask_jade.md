@@ -1,5 +1,7 @@
 ---
 title: falsk + jinja + jade 
+tags：
+- flask
 ---
 
 # flask + jinja + jade 使用

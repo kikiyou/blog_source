@@ -1,6 +1,7 @@
 ---
 title: JavaScript
-tags: JavaScript
+tags: 
+- JavaScript
 ---
 # Flask 和 jquery 的小理解
 

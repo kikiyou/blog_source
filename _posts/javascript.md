@@ -1,6 +1,7 @@
 ---
 title: JavaScript
-tags: JavaScript
+tags: 
+- JavaScript
 ---
 
 # JavaScript 基础学习

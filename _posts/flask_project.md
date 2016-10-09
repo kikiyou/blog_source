@@ -1,7 +1,8 @@
 ---
 title: flask项目组织方法
 
-tags: python
+tags: 
+- python
 ---
 
 # flask项目组织方法

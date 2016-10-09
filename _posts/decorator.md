@@ -1,7 +1,8 @@
 ---
 title: decorator-装饰器
 date: 2016-08-14 10:19:44
-tags: python
+tags: 
+- python
 ---
 
 # 装饰器

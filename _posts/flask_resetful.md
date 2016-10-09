@@ -1,7 +1,9 @@
 ---
 title: flask-resetful-api
 
-tags: python,flask
+tags: 
+- python
+- flask
 ---
 
 # 这里有一个系列的flask resetful api的设计 非常好

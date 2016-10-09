@@ -9,22 +9,29 @@ tags:
 ## docker 安装
 
 + 安装
-dnf install docker
+
+[root@rhel7 ~] dnf install docker
 
 + 运行docker服务
-``` bash
+ 
 [root@rhel7 ~]#systemctl  start docker
+
 [root@rhel7 ~]#systemctl enable docker
-```
+ 
 
 ## 安装Docker-compose
 ``` bash
 curl -L https://github.com/docker/compose/releases/download/1.8.1/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+
 chmod +x /usr/local/bin/docker-compose
+```
+
+* 查看版本
 
 root ➜  docker-elk docker-compose --version
+
 docker-compose version 1.8.1, build 878cff1
-```
+
 
 ## 使用阿里云的加速器
 
@@ -39,12 +46,20 @@ https://cr.console.aliyun.com/
 
 ***系统要求 CentOS 7 以上，Docker 1.9 以上。***
 ``` bash 
-sudo cp -n /lib/systemd/system/docker.service /etc/systemd/system/docker.service 
+sudo cp -n /lib/systemd/system/docker.service /etc/systemd/system/docker.service
+
 sudo sed -i "s|ExecStart=/usr/bin/docker daemon|ExecStart=/usr/bin/docker daemon --registry-mirror=https://xxxxxx.mirror.aliyuncs.com|g" 
+
 /etc/systemd/system/docker.service sudo systemctl daemon-reload sudo service docker restart
 ```
 
-# 启动
+## 克隆项目
+
+git clone https://github.com/deviantony/docker-elk.git
+
+##  启动
+cd docker-elk
+
 docker-compose up
 
 如果上面报错 请尝试下面

@@ -1,7 +1,8 @@
 ---
 title: fabric
 date: 2016-08-14 10:19:44
-tags: python
+tags: 
+- python
 ---
 
 # fabric学习

@@ -1,7 +1,8 @@
 ---
 title: git
 date: 2016-08-14 10:19:44
-tags: git
+tags: 
+- git
 ---
 
 ##git 的使用

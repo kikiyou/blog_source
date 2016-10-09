@@ -1,7 +1,9 @@
 ---
 title: flask源码学习
 date: 2016-09-25 14:01
-tags: python,flask
+tags: 
+- python
+- flask
 ---
 # 那些年我用flask踩过的坑
 
