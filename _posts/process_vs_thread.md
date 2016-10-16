@@ -60,3 +60,5 @@ ihooks 绝对路径导入
 [Python线程指南](http://www.cnblogs.com/huxi/archive/2010/06/26/1765808.html)
 [python实现线程池](http://ucode.blog.51cto.com/10837891/1766332)
 [Python线程池详细讲解](http://blog.csdn.net/php_fly/article/details/18155421)
+
+[Python 线程(threading) 进程(multiprocessing)](http://www.cnblogs.com/MrZhangLoveLearning/p/5079941.html)
