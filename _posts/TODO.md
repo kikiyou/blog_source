@@ -46,3 +46,16 @@ http://www.cnblogs.com/keepfool/p/5648674.html
 2. fabric 看完 v0.0.1了
 
 3. 使用pyjade写个demo （简单玩了一下pyjade之后，发现并不喜欢）
+
+
+------尚老师推荐
+http://pages.cs.wisc.edu/~remzi/OSTEP/
+http://www.ccs.neu.edu/course/cs3650/
+
+---要看的资料
+
+
+[The Standard Python Library](http://effbot.org/librarybook/)
+The Standard Python Library
+
+[The Python Standard Library by Example](http://ptgmedia.pearsoncmg.com/images/9780321767349/samplepages/0321767349.pdf)

@@ -154,3 +154,19 @@ getpass.getpass()
 + python 没有switch的解决办法
 http://www.pydanny.com/why-doesnt-python-have-switch-case.html
 
++ del 命令的使用
+
+有时候，我们import 一个模块的组件，并不想再后面继续引用可以如下；
+
+``` python
+import thread 
+
+_start_new_thread = thread.start_new_thread
+_allocate_lock = thread.allocate_lock
+_get_ident = thread.get_ident
+ThreadError = thread.error
+del thread
+```
+
++ StringIO 和 BytesIO
+ 在内存中操作字符串的读写
