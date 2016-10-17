@@ -46,4 +46,44 @@ logstash --configtest -f logstash-live-netflow.conf
     }
     ```
 
-    
++  GeoIP 
+
+``` bash
+input {stdin{}}
+filter {
+    geoip {
+        source => "message"
+    }
+}
+output {
+    stdout{
+        codec=>rubydebug
+        }
+    }
+```
+
+默认查到的信息可能比较多，fields过滤 指定自己需要的字段
+
+``` bash
+input {stdin{}}
+filter {
+    geoip {
+        source => "message"
+        fields => ["city_name", "continent_code", "country_code2", "country_code3", "country_name", "dma_code", "ip", "latitude", "longitude", "postal_code", "region_name", "timezone"]
+        remove_field => ["[geoip][latitude]", "[geoip][longitude]"] } }  // 删除指定字段
+    }
+    }
+}
+output {
+    stdout{
+        codec=>rubydebug
+        }
+    }
+```
+
++ json 
+ 
+输出json
+
++ 调试显示
+logstash -f ff.conf -vv

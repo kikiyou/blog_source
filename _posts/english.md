@@ -8,3 +8,5 @@ tags:
 slash /
 decorator   装饰器
 relative 相对
+backends 后端
+The term Domain Specific Language（dsl）    特殊领域专用语言

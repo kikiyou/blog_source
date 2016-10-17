@@ -28,7 +28,7 @@ chmod +x /usr/local/bin/docker-compose
 
 * 查看版本
 
-root ➜  docker-elk docker-compose --version
+[root@rhel7 ~]# docker-compose --version
 
 docker-compose version 1.8.1, build 878cff1
 
@@ -48,9 +48,22 @@ https://cr.console.aliyun.com/
 ``` bash 
 sudo cp -n /lib/systemd/system/docker.service /etc/systemd/system/docker.service
 
-sudo sed -i "s|ExecStart=/usr/bin/docker daemon|ExecStart=/usr/bin/docker daemon --registry-mirror=https://xxxxxx.mirror.aliyuncs.com|g" 
+sudo sed -i "s|ExecStart=/usr/bin/docker daemon|ExecStart=/usr/bin/docker daemon --registry-mirror=https://xxxxxx.mirror.aliyuncs.com|g" /etc/systemd/system/docker.service 
+sudo systemctl daemon-reload 
+sudo service docker restart
+```
 
-/etc/systemd/system/docker.service sudo systemctl daemon-reload sudo service docker restart
+修改后的
+/etc/systemd/system/docker.service
+如下：
+
+```
+ExecStart=/usr/bin/docker daemon --registry-mirror=https://XXXX.mirror.aliyuncs.com \
+          --exec-opt native.cgroupdriver=systemd \
+          $OPTIONS \
+          $DOCKER_STORAGE_OPTIONS \
+          $DOCKER_NETWORK_OPTIONS \
+          $INSECURE_REGISTRY
 ```
 
 ## 克隆项目
@@ -93,13 +106,12 @@ sudo docker exec -it 775c7c9ee1e1 /bin/bash
 
 更换为阿里mirror的软件源
 ``` bash
-echo " 
+cat > /etc/apt/sources.list <<EOF
 deb http://mirrors.aliyun.com/debian/ jessie main non-free contrib
 deb http://mirrors.aliyun.com/debian/ jessie-proposed-updates main non-free contrib
 deb-src http://mirrors.aliyun.com/debian/ jessie main non-free contrib
 deb-src http://mirrors.aliyun.com/debian/ jessie-proposed-updates main non-free contrib
-" >/etc/apt/sources.list
-```
+EOF
 
 + debian 简单软件包管理
     - apt-get clean && sudo apt-get autoclean  清理仓库

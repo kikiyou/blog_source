@@ -73,7 +73,7 @@ tags:
     3. 使用with的版本
     ``` python
     with open("/tmp/foo.txt") as file:
-    data = file.read()
+        data = file.read()
     ```
     除了有更优雅的语法，with还可以很好的处理上下文环境产生的异常。
 
