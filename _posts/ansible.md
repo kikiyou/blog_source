@@ -22,6 +22,16 @@ cc.txt
 requirements.txt
 contributors.txt
 
++ facter
+
+dnf install facter
+/usr/bin/facter --json
+
+输出主机的常见信息
+
++  创建临时目录
+mktemp /tmp/vvv.XXXXXX
+
 
 + itertools 高效循环的迭代函数集合
 [参考](http://wklken.me/posts/2013/08/20/python-extra-itertools.html)
