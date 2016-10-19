@@ -56,7 +56,7 @@ http://pages.cs.wisc.edu/~remzi/OSTEP/
 http://www.ccs.neu.edu/course/cs3650/
 
 ---要看的资料
-
+OpenResty最佳实践
 
 [The Standard Python Library](http://effbot.org/librarybook/)
 The Standard Python Library

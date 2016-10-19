@@ -45,13 +45,39 @@ ihooks 绝对路径导入
 
 + 把要执行的代码 放到run方法里面
 
++ python 线程同步机制
+
+    - Locks, 
+        锁
+
+    - RLocks, 
+        重复锁
+
+    - Semaphores, 
+
+        信号量semaphore 
+        是一个变量，控制着对公共资源或者临界区的访问。信号量维护着一个计数器，指定可同时访问资源或者进入临界区的线程数。 
+        每次有一个线程获得信号量时，计数器-1。若计数器为0，其他线程就停止访问信号量，直到另一个线程释放信号量。 
+ 
+    - Conditions, 
+        条件
+        condition.acquire()	#获取条件锁
+        condition.notify()  #唤醒消费者线程
+        condition.release()	#释放条件锁
+
+        with self.condition： ##可以用with 代替 acquire 和 release
+            condition.wait()	#等待商品，并且释放资源
+
+    - Events
+        事件
+
+    - Queues
+        队列
 
 
 
 
-
-
-
++ 多进程中 def Pipe(duplex=True)
 
 
 参考：
@@ -62,3 +88,4 @@ ihooks 绝对路径导入
 [Python线程池详细讲解](http://blog.csdn.net/php_fly/article/details/18155421)
 
 [Python 线程(threading) 进程(multiprocessing)](http://www.cnblogs.com/MrZhangLoveLearning/p/5079941.html)
+[Python线程同步机制](http://yoyzhou.github.io/blog/2013/02/28/python-threads-synchronization-locks/)
