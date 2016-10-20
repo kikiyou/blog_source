@@ -6,6 +6,7 @@
 GetHostTimeDisabled這個變數並沒有任何的GUI介面可以去設定，唯一可以處理的就是回歸到VBoxManage.exe來運行。如果你沒有將VBoxManage.exe設定成全域可運行的話，那麼請自行切換到VirtualBox預設目錄去處理。接下來請大家打開cmd切到console模式吧！
 
 列舉你目前電腦下所有的VM Guest OS
+``` bash
 C:\Users\Administrator>VBoxManage list vms
 "PC 000" {3c279b5b-7f47-4663-86ed-435e9e0dbba8}
 "PC 001" {85eb55b3-7c6f-47d5-9273-42564c0ed795}
@@ -14,6 +15,8 @@ C:\Users\Administrator>VBoxManage list vms
 "PC 004" {7315c768-a353-4604-bb57-dbd5505724fc}
 "PC 005" {7c96a6c8-c8ea-4fb6-8ced-fa8b55ff4be9}
 "PC 006" {329bb2d9-1d07-4d8f-993e-fdae3bdf1d54}
+```
+
 對你想要禁止時間同步的Guest OS開刀
 比對上例，假設我們想要對PC 006這一台電腦進行時間同步的禁止，那麼我們要下這樣的指令：
 ``` bash
