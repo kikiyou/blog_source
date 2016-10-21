@@ -50,6 +50,9 @@ http://www.cnblogs.com/keepfool/p/5648674.html
 
 3. 使用pyjade写个demo （简单玩了一下pyjade之后，发现并不喜欢）
 
+4. ansible 源码
+Misc refactoring, updated TODO to reflect new templating features being completed
+
 
 ------尚老师推荐
 http://pages.cs.wisc.edu/~remzi/OSTEP/
