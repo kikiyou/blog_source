@@ -70,4 +70,8 @@ Thread 1 (Thread 0x7fe78e2d1700 (LWP 18015)):
 #10 0x000056097477abe7 in main ()
 ```
 
++ proc
+cat /proc/18015/status
+Threads:	3
+
 > 如上可知，有三个线程工作

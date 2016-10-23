@@ -65,3 +65,7 @@ if __name__ == '__main__':
 ```
 并发的执行 函数  和 参数，并且返回结果都可以返回
 ansible 使用这个特性，来并发执行命令 参数为对应的hosts
+
++ ansibel patterns - 模式匹配，允许多个匹配规则
+全部匹配到才是匹配
+['*.rhel.cc','web']   --> web1.rel.cc 

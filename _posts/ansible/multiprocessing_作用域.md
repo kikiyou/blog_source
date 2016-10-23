@@ -70,12 +70,12 @@ if __name__ == '__main__':
 from multiprocessing import Pool 
 
 def f(x):
-    return x*x
+    return x**x
 
 class calculate(object):
     def run(self):
         p = Pool()
-        return p.map(f, [1,2,3])
+        return p.map(f, [1,2,3，4])
 
 cl = calculate()
 print cl.run()
@@ -93,12 +93,76 @@ def _executor_hook(x):
 
 class Calculate(object):
     def f(self,x):
-        return x*x
+        return x**x
     def run(self):
         p = Pool()
-        args = [ (self,x) for x in [1,2,3] ]
+        args = [ (self,x) for x in [1,2,3,4] ]
         return p.map(_executor_hook,args)
 
+cl = Calculate()
+print cl.run()
+```
+
++ 版本4
+
+这一版本，主要是解决，并发运行过程中不能使用Ctrl-C 终止的问题
+``` python
+import multiprocessing
+import signal
+import Queue
+
+from time import sleep
+
+def _executor_hook(job_queue, result_queue):
+    ''' callback used by multiprocessing pool '''
+    signal.signal(signal.SIGINT, signal.SIG_IGN)
+    while not job_queue.empty():
+        try:
+            job = job_queue.get(block=False)
+            Calculate, arg = job
+            result_queue.put(Calculate.f(arg))
+        except Exception:
+            print Exception
+
+class Calculate(object):
+    def f(self,x):
+        sleep(1)
+        return x**x
+
+    def run(self):
+        ''' xfer & run module on all matched hosts '''
+        
+        alist = [ (self,x) for x in [1,2,3,4] ]
+
+        job_queue = multiprocessing.Queue()
+        result_queue = multiprocessing.Queue()
+
+        for i in alist:
+            job_queue.put(i)
+
+        workers = []
+        for i in alist:
+            tmp = multiprocessing.Process(target=_executor_hook,
+                                    args=(job_queue, result_queue))
+            tmp.start()
+            workers.append(tmp)
+
+        try:
+            for worker in workers:
+                worker.join()
+        except KeyboardInterrupt:
+            print 'parent received ctrl-c'
+            for worker in workers:
+                worker.terminate()
+                worker.join()
+        
+        results = []
+        while not result_queue.empty():
+            results.append(result_queue.get(block=False))
+        
+        return results
+         
+ 
 cl = Calculate()
 print cl.run()
 ```

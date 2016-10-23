@@ -8,13 +8,14 @@ dummy_thread 是 对thread的python 实现，通过他可以简单理解thread
 
 [dummy_thread](https://hg.python.org/cpython/file/2.7/Lib/dummy_thread.py)
 
+[这幅图大好](https://software.intel.com/sites/default/files/m/5/7/f/a/b/12568-2.1.1_e7_ba_bf_e7_a8_8b_e4_b8_8e_e8_bf_9b_e7_a8_8b_e7_9a_84_e5_8c_ba_e5_88_ab.pdf)
 process： single-threaded process
 threaded： Multi-Threaded
 
 + 为什么使用线程
 
     1. 并行需求
-    2. 避免因i/o缓慢 引起的阻塞t
+    2. 避免因i/o缓慢 引起的阻塞
 
 + ihooks module 的使用
 
