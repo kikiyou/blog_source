@@ -69,3 +69,18 @@ ansible 使用这个特性，来并发执行命令 参数为对应的hosts
 + ansibel patterns - 模式匹配，允许多个匹配规则
 全部匹配到才是匹配
 ['*.rhel.cc','web']   --> web1.rel.cc 
+
++ ansible 模版的setup模块中 
+ 变量格式是json
+ 指定了matedata 就从matedata中读取变量，否则使用/etc/ansible/setup 中的
+
+ +  变化
+
+ play_book 中的变量，由明确指定到vars
+
+ action: setup http_port=80 max_clients=200
+ ----
+ 
+vars:
+    http_port: 80
+    max_clients: 200

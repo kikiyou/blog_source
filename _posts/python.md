@@ -170,3 +170,19 @@ del thread
 
 + StringIO 和 BytesIO
  在内存中操作字符串的读写
+
+ + import json
+
+参数 indent=4，使输出更加优雅
+
+data1 = {'b':789,'c':456,'a':123}
+d1 = json.dumps(data1,sort_keys=True,indent=4)
+print d1
+
+输出：
+
+{ 
+    "a": 123, 
+    "b": 789, 
+    "c": 456 
+}
