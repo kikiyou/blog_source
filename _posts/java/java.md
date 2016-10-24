@@ -65,3 +65,7 @@ allprojects{
 + java接口
 
 + spring mvc 学习
+
+学习网站
+http://wiki.jikexueyuan.com/project/spring/mvc-framework/spring-mvc-form-handling-example.html
+https://spring.io/guides/gs/handling-form-submission/#initial
