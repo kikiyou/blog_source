@@ -18,6 +18,18 @@ sudo dnf install gradle
 build.gradle
 settings.gradle
 
+* linux gradle home 设置
+
+vi ~/.bash_profile
+export GRADLE_HOME=/home/yh/.gradle/wrapper/dists/gradle-2.6-bin/627v5nqkbedft1k2i5inq4nwi/gradle-2.6
+export PATH=$GRADLE_HOME/bin:$PATH
+export GRADLE_USER_HOME=~/.gradle
+echo $GRADLE_HOME
+
+清理工程 
+gradle clean
+
+gradle build 编译并运行
 
 国内meven 软件源
 
@@ -47,3 +59,9 @@ allprojects{
         }
     }
 }
+
++ enum 枚举类型
+
++ java接口
+
++ spring mvc 学习
