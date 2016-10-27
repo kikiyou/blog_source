@@ -17,6 +17,9 @@ ELK Stack 是 Elasticsearch、Logstash、Kibana 三个开源软件的组合。
 
 + Logstash
 
+Logstash 正则匹配规则在线检查
+http://grokdebug.herokuapp.com/
+
 + Kibana
 [Kibana-4.2 中文参考](http://7xw819.com1.z0.glb.clouddn.com/Kibana-4.2-Reference_chinese.pdf)
 
