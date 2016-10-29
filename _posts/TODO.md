@@ -3,6 +3,7 @@ title: TODO
 tags: learn
 ---
 # 我将要学习的
+[常用的标准库](https://www.zhihu.com/question/20501628)
 
 1. requests 源码
 2. flask 源码
