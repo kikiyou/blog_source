@@ -1,3 +1,10 @@
+---
+title: ansible的git 模块
+date: 2016-10-7 10:19:44
+tags: 
+- ansible
+- python
+---
 # ansible的git 模块
 
 ansibel的git模块中包含如下函数

@@ -1,3 +1,10 @@
+---
+title: playbook的yml格式转换成json
+date: 2016-10-7 11:19:44
+tags: 
+- ansible
+- python
+---
 # playbook的yml格式转换成json
 
 ``` python

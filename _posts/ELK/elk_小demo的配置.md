@@ -1,18 +1,17 @@
-#
-
+---
+title: elk 简单配置
+date: 2016-10-10 10:19:44
+tags: 
+- elk
+---
+# elk 简单配置
 
 [ELK的靠谱安装方法](https://www.digitalocean.com/community/tutorials/how-to-install-elasticsearch-logstash-and-kibana-elk-stack-on-centos-7)
-* elasticsearch 
 
-elasticsearch 中索引相当于database
-数据清除办法
-``` bash
-curl -XDELETE 'http://172.16.1.16:9200/logstash-2013.03.*' 
-```
+![本配置实现的模型是](http://7xw819.com1.z0.glb.clouddn.com/elk_stack_filebeat.PNG)
 
+## filebeat.yml 的配置
 ``` yaml
-filebeat.yml 的配置
-
 filebeat:
   prospectors:
     # -
@@ -45,9 +44,9 @@ shipper:
   tags: ["web-server", "lighttpd"]
 
 ----
-
-logstash.conf 的配置
-
+```
+## logstash.conf 的配置
+```
 input {
         beats {
          port => 5000
@@ -82,12 +81,18 @@ COMMONLIGHTTPDLOG %{IPORHOST:client_ip} %{USER:http_user} %{USER:http_auth} \[%{
 COMBINEDLIGHTTPDLOG %{COMMONLIGHTTPDLOG} %{QS:referrer} %{QS:agent}
 
 ------如上规则实现
+```
+## elasticsearch 
 
-
-elasticsearch
+elasticsearch 中索引相当于database
+数据清除办法
+``` bash
+curl -XDELETE 'http://172.16.1.16:9200/logstash-2013.03.*' 
+```
 
 （2） 配置ES。这里只做最简单的配置，修改ES_HOME/config/elasticsearch.yml文件， 相关配置参数
 
+```
 #集群名称
 cluster.name: elasticsearch
 
