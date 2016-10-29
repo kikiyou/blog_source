@@ -9,25 +9,35 @@ tags: learn
 2. flask 源码
 3. werkzeug 源码
 4. jinjia2 源码
-5. threading 源码 （python中多线程的实现）
+5. ~~threading 源码 （python中多线程的实现）~~
 6. sqlalchemy 源码
 7. urllib urllib2 urllib3
 8. jquery 源码
-
 9. wtforms 源码 表单的提交与验证
 
 10. 学习eventlet 或 gevent 优先看eventlet
 
 11. 查看pypy的底层实现，学习python技巧
 
-
-13. leancloud.cn 学习 写个demo
+12. leancloud.cn 学习 写个demo
 多线程序  迭代 装饰器 yield
 
-14.  [学习flask项目](https://github.com/mattupstate/overholt.git)
+13.  [学习flask项目](https://github.com/mattupstate/overholt.git)
 
-15. [基于vue.js重写Cnodejs.org社区](https://github.com/shinygang/Vue-cnodejs.git)
+14. [基于vue.js重写Cnodejs.org社区](https://github.com/shinygang/Vue-cnodejs.git)
 Vue + Vue-Router + Vuex + I18n + Validator + Webpack + PostCSS + Karma + Koa
+
+---
+我已经完成
+
+1. requests 看完 v0.3.1
+
+2. fabric 看完 v0.0.1了
+
+3. ansible 看完 v0.0.1了
+
+
+Other:
 
 http://www.timqian.com/star-history/#torvalds/linux
 github趋势
@@ -36,30 +46,15 @@ github趋势
 这篇文章看一下（动态修改数据库）
 http://www.cnblogs.com/keepfool/p/5648674.html
 
- 牛B技术  有时间 了解下 http://www.zuoyouxi.com/
+牛B技术  有时间 了解下 http://www.zuoyouxi.com/
 
-
- Grafana + InfluxDB/Graphite
-
----
-
-我已经完成
-
-1. requests 看完 v0.3.1
-
-2. fabric 看完 v0.0.1了
-
-3. 使用pyjade写个demo （简单玩了一下pyjade之后，发现并不喜欢）
-
-4. ansible 源码
-Misc refactoring, updated TODO to reflect new templating features being completed
-
+Grafana + InfluxDB/Graphite
 
 ------尚老师推荐
 http://pages.cs.wisc.edu/~remzi/OSTEP/
 http://www.ccs.neu.edu/course/cs3650/
 
----要看的资料
+---想要看的资料
 OpenResty最佳实践
 
 [The Standard Python Library](http://effbot.org/librarybook/)
