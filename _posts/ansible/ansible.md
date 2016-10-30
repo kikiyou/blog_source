@@ -7,7 +7,7 @@ tags:
 ---
 
 # ansible 源码学习
-
+<!-- more -->
 + fnmatch   unix文件匹配模块
 import fnmatch
 import os

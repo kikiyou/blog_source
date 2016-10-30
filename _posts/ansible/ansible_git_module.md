@@ -6,7 +6,7 @@ tags:
 - python
 ---
 # ansible的git 模块
-
+<!-- more -->
 ansibel的git模块中包含如下函数
 第一版 git模块 只处理master版本
 

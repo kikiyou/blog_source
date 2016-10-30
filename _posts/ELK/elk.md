@@ -5,7 +5,7 @@ tags:
 - elk
 ---
 # ELK 资料收集
-
+<!-- more -->
 ELK Stack 是 Elasticsearch、Logstash、Kibana 三个开源软件的组合。
 
 + all

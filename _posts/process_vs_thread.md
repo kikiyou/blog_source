@@ -1,5 +1,5 @@
 # 进程线程的区别(threading 源码学习)
-
+<!-- more -->
 python 中的threading 模块是对 thread模块的封装
 
 默认thread模块是C实现的，我对C语言并不了解，幸好官方提供了dummy_thread模块，

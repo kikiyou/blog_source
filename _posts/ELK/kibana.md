@@ -1,5 +1,11 @@
+---
+title: kibana4 创建饼图
+date: 2016-10-30 11:31:44
+tags: 
+- elk
+---
 # kibana 学习
-
+<!-- more -->
 1. kibana3 是angularjs写的
 2. Kibana4	采用	angular.js	+	node.js	框架编写
 

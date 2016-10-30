@@ -3,6 +3,7 @@ title: TODO
 tags: learn
 ---
 # 我将要学习的
+<!-- more -->
 [常用的标准库](https://www.zhihu.com/question/20501628)
 
 1. requests 源码
@@ -15,7 +16,7 @@ tags: learn
 8. jquery 源码
 9. wtforms 源码 表单的提交与验证
 
-10. 学习eventlet 或 gevent 优先看eventlet
+10. 学习eventlet 或 gevent 优先看gevent
 
 11. 查看pypy的底层实现，学习python技巧
 
@@ -58,6 +59,4 @@ http://www.ccs.neu.edu/course/cs3650/
 OpenResty最佳实践
 
 [The Standard Python Library](http://effbot.org/librarybook/)
-The Standard Python Library
-
 [The Python Standard Library by Example](http://ptgmedia.pearsoncmg.com/images/9780321767349/samplepages/0321767349.pdf)

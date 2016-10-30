@@ -4,7 +4,7 @@ tags:
 - html
 ---
 # html5 学习
-
+<!-- more -->
 + html5 标签列表
 [html5标签列表](https://developer.mozilla.org/zh-CN/docs/Web/Guide/HTML/HTML5/HTML5_element_list)
 

@@ -1,7 +1,8 @@
 ---
 title: vue 学习
 ---
-
+# vue 学习
+<!-- more -->
 + 
 [Vue.js——基于$.ajax实现数据的跨域增删查改](http://www.cnblogs.com/keepfool/p/5648674.html)
 

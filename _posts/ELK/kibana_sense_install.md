@@ -1,5 +1,11 @@
+---
+title: kibana sense 插件 离线安装
+date: 2016-10-30 11:31:44
+tags: 
+- elk
+---
 # kibana sense 离线安装
-
+<!-- more -->
 * 手动下载
 https://download.elasticsearch.org/elastic/sense/sense-latest.tar.gz
 

@@ -4,8 +4,8 @@ date: 2016-07-14 10:19:44
 tags: 
 - php
 ---
-
 #### php学习
+<!-- more -->
 + php中显示错误信息 修改php.ini 如下
 
     1. display_errors = On

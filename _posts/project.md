@@ -2,7 +2,7 @@
 title: project 技术栈
 ---
 #一个项目 需要的技术栈
-
+<!-- more -->
 基本选型
 
 Flask、Gevent、Gunicorn、Mongodb、Nginx、Wrapped Memecache、ElasticSearch

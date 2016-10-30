@@ -5,7 +5,7 @@ tags:
 - elk
 ---
 # elk 简单配置
-
+<!-- more -->
 [ELK的靠谱安装方法](https://www.digitalocean.com/community/tutorials/how-to-install-elasticsearch-logstash-and-kibana-elk-stack-on-centos-7)
 
 ![本配置实现的模型是](http://7xw819.com1.z0.glb.clouddn.com/elk_stack_filebeat.PNG)

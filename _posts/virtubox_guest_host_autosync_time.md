@@ -1,11 +1,17 @@
-# 關閉VirtualBox Host與Guest之間的時間同步
+---
+title: 关闭VirtualBox Host与Guest之间的时间同步
+date: 2016-08-18 16:10:02
+tags: 
+- virtual
+---
+# 关闭VirtualBox Host与Guest之间的时间同步
+<!-- more -->
+基本上，VirtualBox安装好后，Host OS与Guest OS之间，就会自动开启时间同步，也就是你在Host OS改了时间，Guest OS就会自动去更新成这个新的时间。但有些时刻，我们会想要让这两者之间的时间是不同步的，这时候就需要GetHostTimeDisabled这个功能出场了。
 
-基本上，VirtualBox灌好之後，Host OS與Guest OS之間，就會自動開啟時間同步，也就是你在Host OS改了時間，Guest OS就會自動去更新成這個新的時間。但有些時刻，我們會想要讓這兩者之間的時間是不同步的，這時候就需要GetHostTimeDisabled這個功能出場了。
 
+GetHostTimeDisabled这个变数并没有任何的GUI介面可以去设定，唯一可以处理的就是回归到VBoxManage.exe来运行。如果你没有将VBoxManage.exe设定成全域可运行的话，那麽请自行切换到VirtualBox预设目录去处理。接下来请大家打开cmd切到console模式吧！
 
-GetHostTimeDisabled這個變數並沒有任何的GUI介面可以去設定，唯一可以處理的就是回歸到VBoxManage.exe來運行。如果你沒有將VBoxManage.exe設定成全域可運行的話，那麼請自行切換到VirtualBox預設目錄去處理。接下來請大家打開cmd切到console模式吧！
-
-列舉你目前電腦下所有的VM Guest OS
+列举你目前电脑下所有的VM Guest OS
 ``` bash
 C:\Users\Administrator>VBoxManage list vms
 "PC 000" {3c279b5b-7f47-4663-86ed-435e9e0dbba8}
@@ -17,11 +23,11 @@ C:\Users\Administrator>VBoxManage list vms
 "PC 006" {329bb2d9-1d07-4d8f-993e-fdae3bdf1d54}
 ```
 
-對你想要禁止時間同步的Guest OS開刀
-比對上例，假設我們想要對PC 006這一台電腦進行時間同步的禁止，那麼我們要下這樣的指令：
+对你想要禁止时间同步的Guest OS开刀
+比对上例，假设我们想要对PC 006这一台电脑进行时间同步的禁止，那麽我们要下这样的指令：
 ``` bash
 VBoxManage setextradata "PC 006" "VBoxInternal/Devices/VMMDev/0/Config/GetHostTimeDisabled" "1"
 ```
-改完之後，如果沒有任何的錯誤資訊，把Guest OS關機，然後Host OS也要重新開機，就完成了！如果有一天想要改回來，那也很簡單，請使用下列的指令來解決即可。
+改完之后，如果没有任何的错误资讯，把Guest OS关机，然后Host OS也要重新开机，就完成了！如果有一天想要改回来，那也很简单，请使用下列的指令来解决即可。
 
 VBoxManage setextradata "PC 006" "VBoxInternal/Devices/VMMDev/0/Config/GetHostTimeDisabled" "0"

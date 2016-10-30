@@ -1,5 +1,11 @@
+---
+title: yml与python格式之间的转换
+date: 2016-07-18 16:10:02
+tags: 
+- python
+---
 # yml与python格式之间的转换
-
+<!-- more -->
 [参考](http://www.ruanyifeng.com/blog/2016/07/yaml.html)
 
 

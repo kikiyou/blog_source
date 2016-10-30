@@ -5,7 +5,7 @@ tags:
 - elk
 ---
 #  logstash 学习
-
+<!-- more -->
 + 查看当前版本
 logstash --version
 Logstash 2.4.0

@@ -6,7 +6,7 @@ tags:
 - python
 ---
 # playbook的yml格式转换成json
-
+<!-- more -->
 ``` python
 import yml
 playbook = yaml.load(file(playbook).read())

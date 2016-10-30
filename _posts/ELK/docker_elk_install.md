@@ -5,7 +5,7 @@ tags:
 - elk
 ---
 # docker elk 安装
-
+<!-- more -->
 ## docker 安装
 
 + 安装

@@ -1,4 +1,11 @@
+---
+title: kibana4 创建饼图
+date: 2016-10-30 11:31:44
+tags: 
+- elk
+---
 # kibana4 创建饼图
+<!-- more -->
 
 1. Visualize -> Pie Chart -> From a new search
 2. 选中需要做图的索引 比如：logstash-lighttpd-access-*

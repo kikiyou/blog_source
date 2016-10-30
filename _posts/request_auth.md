@@ -4,7 +4,7 @@ date: 2016-07-18 16:10:02
 tags: python
 ---
 # request认证的支持
-
+<!-- more -->
 
 Add in a proper AuthManager instead of the list version that was being used.
 Added support for all Auth types that python supports

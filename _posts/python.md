@@ -5,6 +5,7 @@ tags: python
 ---
 
 ### python学习
+<!-- more -->
 python debug 工具
     pdb
     (https://docs.python.org/2/library/pdb.html)

@@ -4,7 +4,7 @@ tags:
 - flask
 ---
 # flask + jinja + jade 使用
-
+<!-- more -->
 
 好处：后缀是html或其他时 使用jinja模版
 

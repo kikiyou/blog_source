@@ -4,7 +4,7 @@ date: 2016-07-18 16:10:02
 tags: redis
 ---
 ## redis 初学
-
+<!-- more -->
 + 字符串
     + 增
         1. SET key value

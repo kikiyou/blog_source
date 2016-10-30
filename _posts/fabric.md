@@ -6,7 +6,7 @@ tags:
 ---
 
 # fabric学习
-
+<!-- more -->
 + 基于字典的字符串格式化
 
 >>> params = {"server":"mpilgrim", "database":"master", "uid":"sa", "pwd":"secret"}

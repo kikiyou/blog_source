@@ -3,7 +3,8 @@ title: yaml vs json vs xml
 date: 2016-10-1 10:19:44
 tags:
 ---
-
+# yaml vs json vs xml 
+<!-- more -->
 ---------xml
 <?xml version="1.0" encoding="UTF-8" ?>
 	<firstName>John</firstName>

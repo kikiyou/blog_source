@@ -4,7 +4,8 @@ date: 2016-10-10 10:19:44
 tags: 
 - elk
 ---
-
+# Elasticsearch
+<!-- more -->
 Elasticsearch 2.4.1
 26MB 小巧好用
 
