@@ -1,11 +1,17 @@
+---
+title: 进程线程的区别(threading 源码学习)
+date: 2016-10-30 10:19:44
+tags: 
+- python
+---
 # 进程线程的区别(threading 源码学习)
-<!-- more -->
+
 python 中的threading 模块是对 thread模块的封装
 
 默认thread模块是C实现的，我对C语言并不了解，幸好官方提供了dummy_thread模块，
 dummy_thread 是 对thread的python 实现，通过他可以简单理解thread
 注：dummy_thread 无法实现多线程
-
+<!-- more -->
 [dummy_thread](https://hg.python.org/cpython/file/2.7/Lib/dummy_thread.py)
 
 [这幅图大好](https://software.intel.com/sites/default/files/m/5/7/f/a/b/12568-2.1.1_e7_ba_bf_e7_a8_8b_e4_b8_8e_e8_bf_9b_e7_a8_8b_e7_9a_84_e5_8c_ba_e5_88_ab.pdf)

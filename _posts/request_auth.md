@@ -1,5 +1,5 @@
 ---
-title: requests
+title: request认证的支持
 date: 2016-07-18 16:10:02
 tags: python
 ---
