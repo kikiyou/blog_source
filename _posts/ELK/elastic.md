@@ -53,11 +53,41 @@ curl -XPUT 'http://localhost:9200/index_XX/type_XX/1' -d '{
 countent: "大家好"
 user_name: "foo"
 }'
+
+POST /inde_XXX/type_XXX/_update     //使用_update字段更新
+{
+  "doc":{
+    "price":10
+  }
+}
+
 ```
 * 查询
 
 ``` bash
 curl -XGET 'http://localhost:9200/index_XX/type_XX/1'
+
+  _source 获取字段
+  curl -XGET 'http://localhost:9200/_source=uid'
+
+GET  _all/_settings  //获取所有索引的设置
+GET  logstash-v5-coins-2016.11.01/_settings  //获取单个索引的设置
+{
+  "logstash-v5-coins-2016.11.01": {
+    "settings": {
+      "index": {
+        "creation_date": "1477958402595",
+        "refresh_interval": "5s",
+        "number_of_shards": "5",   //定义索引的主分片数量 创建索引后不可修改
+        "number_of_replicas": "1", //每个主分片的复制分片个数，默认1 可修改
+        "uuid": "7QwiwQ4KQcmSiLUnALR6ZA",
+        "version": {
+          "created": "2040199"
+        }
+      }
+    }
+  }
+}
 ```
 
 * 搜索
@@ -167,6 +197,82 @@ facets  支持以下,就像sql group中支持 sum max 等
         "filed": "countent","size": 100 // 前一百笔
               }
     }
+  }
+}
+
+```
++ 组合查询
+  + bool查询
+    - must,should,must_not   与/或/非
+    - minimum_should_match: 表示一个文档至少匹配多少个短语才算时匹配
+    - disable_coord: 启用和禁用一个文档中包含所有查询关键词的分数得分计算,默认是false
+  + boosting查询
+    - positive部分：查询返回的查询结果分值不变
+    - negative部分：查询的结果分值会被降低
+    - negative_boost部分：设置negative中要降低的分值
+  + constant_score查询 
+    - 优点：可以让一个查询得到一个恒定的分值
+  + indices查询 -> 在多个索引里面查询
+    - no_match_query 查询其他索引里的数据
+
++ Filter 过滤 （有cache）
+  + filter 查询语句
+  + cache 缓存
+    开启方式:在filter查询语句后面加"_cache":true
+    注意：
+    Script filters,Geo-filters,Date ranges 这样的过滤方式开启cache无意义
+    exits,missing,range,term和terms查询是默认开启cache的
+
++ bulk 批量操作
+{action:{metadata}}\n
+{request body}\n
+{action:{metadata}}\n
+{request body}\n
+...
+
+例:{"delete":{"_index":"library","_type":"books","_id":"1"}}
+
+| action(行为)  | 解释                     |
+|--------------:|--------------------------|
+| create        | 当文件不存在时创建之。   |
+| index         | 创建新文档或替换已有文档 |
+| update        | 局部更新文档             |
+| delete        | 删除一个文档             |
+
++ Elasticsearch 版本控制version  --》 锁  --》 悲观锁/乐观锁
+  + 内部版本控制：_version自增长,修改数据后，_version会自动加1
+  + 外部版本控制：为了保持_version与外部版本控制的数值一致，使用version_type=external,
+                检查数据当前的version值 是否小于请求中的version值 
+``` bash
+PUT  twitter/books/1
+{
+  "title":"eeeeeeeeee title eeeeeeeeeeeee",
+  "name":{
+    "first":"Zachary",
+    "last":"Tong"
+  },
+  "publish_data":"2015-02-06",
+  "price":"59.99"
+}
+
+
+get twitter/books/1
+
+post /twitter/books/1/_update?version=333  //内部版本控制，指定外部版号为333， 会提示冲突
+{
+  "doc":{
+    "price":11
+  }
+}
+
+外部版本控制机制,指定的version=5 大于当前版本就ok
+version 由外部提供
+PUT /twitter/books/1?version=5&version_type=external
+{
+  "title":"ttttt 3333 ttt",
+  "name":{
+    "first":"cccc",
+    "last":"Tang"
   }
 }
 
