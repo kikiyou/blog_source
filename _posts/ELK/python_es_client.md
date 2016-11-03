@@ -34,3 +34,7 @@ GET /_tasks?nodes=nodeId1,nodeId2&actions=cluster:*
 * es学习内容
 
 https://github.com/rfyiamcool/elasticsearch_parse
+
+
+* install elasticsearch-dsl-py
+pip install elasticsearch-dsl
