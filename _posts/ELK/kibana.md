@@ -18,3 +18,6 @@ http://elasticsearch.cn/article/35
 
 点击这个地址安装chrome插件：https://chrome.google.com/webstore/detail/elasticsearch-csv-exporte/kjkjddcjojneaeeppobfolgojhohbpjn/related
  
+
+ + kibana插件 Timelion
+ 好东西呀
