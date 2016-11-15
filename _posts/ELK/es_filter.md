@@ -76,7 +76,7 @@ GET /store/_mapping
 GET /store/
 
 # 查看分析器解析的结果
-GET /_analyze?text=501002140
+GET /_analyze?text=SD1002140
 
 
 

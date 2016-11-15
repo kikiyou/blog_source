@@ -324,3 +324,7 @@ elasticdump --input=mapping.json  --output=http://xxxxxxx:9000/.kibana --type=ma
 导入具体的kibana配置信息
 elasticdump --input=data.json  --output=http://xxxxx:9000/.kibana --type=data
 ```
+
+参考：
+[Elasticsearch 2.20入门篇：聚合操作](https://my.oschina.net/secisland/blog/614127)
+[Elasticsearch 的聚合查询及过滤](http://techlog.cn/article/list/10182851)
