@@ -98,3 +98,47 @@ vars:
     再调用paramiko.exec_command,加参数执行之。
 
     后来play_book 之类的都是在这个思想上的延伸。
+
++ ansible 0.0.1 之后 增加了自定义 错误的功能
+  写在errors.py 中  from ansible.errors import * 引入
+
++ ansibel 中把 参数的传递，改为写参数文件，传递给remote
+生产的文件如：(6, '/tmp/tmpKFllwL')
+        # make a tempfile for the args and stuff the args into the file
+        argsfd,argsfile = tempfile.mkstemp()
+        argsfo = os.fdopen(argsfd, 'w')
+        argsfo.write(args)
+        argsfo.flush()
+        argsfo.close()
+        args_rem = tmp + 'argsfile'
+        self.remote_log(conn, "args: %s" % args)
+        self._transfer_file(conn,argsfile, args_rem)
+        os.unlink(argsfile)
+        cmd = "%s %s" % (remote_module_path, args_rem)
+由传参数，改为传参数文件的路径
+
++ ansibel 中支持返回的不是json的兼容
+只要返回的是key=value 这种形式就可以
+```
+def parse_json(data):
+    try:
+        return json.loads(data)
+    except:
+        # not JSON, but try "Baby JSON" which allows many of our modules to not
+        # require JSON and makes writing modules in bash much simpler
+        results = {}
+        tokens = shlex.split(data)
+        for t in tokens:
+            if t.find("=") == -1:
+                raise AnsibleException("failed to parse: %s" % data)
+            (key,value) = t.split("=", 1)
+            if key == 'changed' or 'failed':
+                if value.lower() in [ 'true', '1' ] :
+                    value = True
+                elif value.lower() in [ 'false', '0' ]:
+                    value = False
+            if key == 'rc':
+                value = int(value)     
+            results[key] = value
+        return results
+```
