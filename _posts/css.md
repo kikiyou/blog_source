@@ -4,7 +4,7 @@ tags:
 - html
 ---
 # css的基础知识
-
+<!-- more -->
 + 选择器-selector
 
 a {

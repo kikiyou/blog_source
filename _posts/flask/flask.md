@@ -5,7 +5,7 @@ tags:
 - flask
 ---
 # flask源码学习
-
+<!-- more -->
 + from __future__ import with_statement
   在老版本的python 中使用with
 

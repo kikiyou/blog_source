@@ -1,10 +1,11 @@
 ---
 title: werkzeug学习
 date: 2016-08-18 16:10:02
-tags: python
+tags: 
+- python
 ---
 # werkzeug学习
-
+<!-- more -->
 + 学习shortly.py
 
 + os.path.dirname(__file__)

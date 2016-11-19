@@ -1,12 +1,12 @@
 ---
-title: git
+title: wtforms 学习
 date: 2016-08-14 10:19:44
 tags: 
-- git
+- python
 ---
 
 # wtforms 学习
-
+<!-- more -->
 + 小理解
 
 渲染 html时，都是把form对象传过去 

@@ -1,5 +1,13 @@
-# multiprocessing pool 使用中的作用域
+---
+title: multiprocessing pool 使用中的作用域
+date: 2016-10-30 10:30:44
+tags: 
+- ansible
+- python
+---
 
+# multiprocessing pool 使用中的作用域
+<!-- more -->
 在看ansible源码的过程中发现 ansible作者遇到多进程并发 作用域的问题
 
 先把他遇到的问题与解决办法归纳于此：

@@ -6,7 +6,7 @@ tags:
 ---
 
 # flask项目组织方法
-
+<!-- more -->
 参考：https://exploreflask.com/blueprints.html
 两种组织Blueprints 的方法。
 1， 功能型

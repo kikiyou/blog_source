@@ -4,7 +4,7 @@ date: 2016-07-14 17:34:47
 tags:
 ---
 #sqlalchemy session管理
-
+<!-- more -->
 ## session基础用法
 ``` python
 from sqlalchemy import create_engine

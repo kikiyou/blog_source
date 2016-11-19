@@ -4,7 +4,7 @@ tags:
 - JavaScript
 ---
 # Flask 和 jquery 的小理解
-
+<!-- more -->
 app = Flask(__name__)   把flask 对象实例化
 
 使用app.config() 使用flask中提供的config方法

@@ -5,7 +5,7 @@ tags: python
 ---
 
 # pygraphviz 学习
-
+<!-- more -->
 ## install
     1. dnf install graphviz-devel
     2. dnf install graphviz

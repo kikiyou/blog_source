@@ -4,7 +4,7 @@ tags: python
 ---
 
 # fabric好的写法
-
+<!-- more -->
 + 过滤fabfile中 私有函数 和 不可调用的函数
 ``` python
 bad:

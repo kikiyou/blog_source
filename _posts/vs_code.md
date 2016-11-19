@@ -4,7 +4,7 @@ date: 2016-08-18 16:10:02
 tags: editor
 ---
 #### vs code的使用
-
+<!-- more -->
 + python 的使用安装
     1. 安装的插件
     Python

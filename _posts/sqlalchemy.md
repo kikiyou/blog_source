@@ -2,9 +2,10 @@
 title: sqlalchemy
 date: 2016-07-11 10:32:21
 tags:
+- sql
 ---
 ### sqlalchemy的使用
-
+<!-- more -->
 + 连接数据库
 
 

@@ -7,9 +7,7 @@ tags:
 ---
 
 # ansible 源码学习
-一直 想看ansible的源码，但一直没有时间
-这次 正好利用十一 好好学习下
-
+<!-- more -->
 + fnmatch   unix文件匹配模块
 import fnmatch
 import os
@@ -37,6 +35,9 @@ mktemp /tmp/vvv.XXXXXX
 [参考](http://wklken.me/posts/2013/08/20/python-extra-itertools.html)
 
 + multiprocessing
+
+因为众所周之的的python多线程全局锁的性能问题，ansible并发使用的是多进程实现 fork=X。
+
 [multiprocessing](http://www.cnblogs.com/vamei/archive/2012/10/12/2721484.html)
 
 + 并发
@@ -72,11 +73,12 @@ ansible 使用这个特性，来并发执行命令 参数为对应的hosts
 
 + ansible 模版的setup模块中 
  变量格式是json
- 指定了matedata 就从matedata中读取变量，否则使用/etc/ansible/setup 中的
+ 指定了matedata 就从matedata中读取变量，否则使用/etc/ansible/setup 中的，
+ 后改为 ～/.ansible/setup 下
 
  +  变化
 
- play_book 中的变量，由明确指定到vars
+ play_book 中的变量，由明确指定到寸放在vars 中
 
  action: setup http_port=80 max_clients=200
  ----
@@ -84,3 +86,15 @@ ansible 使用这个特性，来并发执行命令 参数为对应的hosts
 vars:
     http_port: 80
     max_clients: 200
+
++ ansible的思想很简单
+
+    主要想法是：
+
+    使用多进程的方式调用paramiko 来进行ssh连接，
+
+    然后把 把预先定义好的模块（比如 ping）传到远程主机，
+
+    再调用paramiko.exec_command,加参数执行之。
+
+    后来play_book 之类的都是在这个思想上的延伸。

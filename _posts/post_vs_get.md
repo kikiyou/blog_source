@@ -4,7 +4,7 @@ date: 2016-07-14 10:19:44
 tags: http
 ---
 ## POST  和 GET 的区别
-
+<!-- more -->
 1. get 的形式如下：
     http://xxx.com?key1=value1&key2=value2
 

@@ -1,10 +1,11 @@
 ---
 title: requests
 date: 2016-07-18 16:10:02
-tags: python
+tags: 
+- python
 ---
-##request 学习笔记
-
+## request 学习笔记
+<!-- more -->
 +  python distribution
    from distutils.core import setup
    1. 创建同模块名的目录

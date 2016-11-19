@@ -5,10 +5,12 @@ tags: python
 ---
 
 ### python学习
+<!-- more -->
 python debug 工具
     pdb
     (https://docs.python.org/2/library/pdb.html)
-
+    
+[常用的标准库](https://www.zhihu.com/question/20501628)
 
 vs code 直接输出python
 http://stackoverflow.com/questions/29987840/how-to-execute-python-code-from-within-visual-studio-code

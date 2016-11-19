@@ -1,5 +1,10 @@
+---
+title: linux下多线程查看工具
+tags: 
+- linux
+---
 #linux下多线程查看工具
-
+<!-- more -->
 * pstree
 
 ``` bash

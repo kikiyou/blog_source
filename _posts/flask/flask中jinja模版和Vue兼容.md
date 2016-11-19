@@ -5,14 +5,19 @@ tags:
 - vue
 ---
 # flask中jinja模版和Vue兼容
+<!-- more -->
 ``` bash
 jinja 和 Vue 都是用{{ }} 
 ```
 笨办法：
 
+方法1
 
+使用jinja的raw, 使用raw之后，里面的就不会被jinja意外解析了
 
-
+{%raw%}
+<h1 class="title">{{name}}</h1>
+{%endraw%}
 
 聪明办法：
 主要思路是通过修改Jinja2的配置，让他只渲染之间的数据，注意空格，而Vue.js处理不加空格的模板。

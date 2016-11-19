@@ -5,8 +5,8 @@ tags:
 - python
 - flask
 ---
-
-
+# flask的配置管理
+<!-- more -->
 + flask的配置管理
 
     flask的配置管理方式，支持使用应用工厂模式来使用应用，
