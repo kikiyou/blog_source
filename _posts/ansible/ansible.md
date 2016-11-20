@@ -142,3 +142,5 @@ def parse_json(data):
             results[key] = value
         return results
 ```
+
++ ansible 由test-mode 脚本 可以不用ansible 直接调用脚本来执行
