@@ -197,15 +197,14 @@ echo "reminder: specify your host file with -i"
 echo "done."
 ```
 
-
+<!-- SHA 5ed2b894 -->
 +  在模板文件中，$foo 这样的会被替换成，会被替换成 字典中的value
 
 $port 和 {{ port }} 的写法相同
 
 
-
-  - name: test basic shell, plus two ways to dereference a variable
-    action: shell echo $HOME $port {{ port }}
+- name: test basic shell, plus two ways to dereference a variable
+action: shell echo $HOME $port {{ port }}
 
 ``` python
 _KEYCRE = re.compile(r"\$(\w+)")
